@@ -51,7 +51,7 @@ got_request_exception.connect(exception_printer)
 
 #call_command('syncdb')
 print 'gevent wsgi server is running on 8080 with settings: %s' % settings
-server = WSGIServer(('', 8080), WSGIHandler())
+server = WSGIServer(('127.0.0.1', 8080), WSGIHandler())
 server.start()
 
 while True:

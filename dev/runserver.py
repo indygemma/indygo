@@ -13,7 +13,7 @@ def is_valid_conf(conf):
 def runserver(conf):
 	if is_valid_conf(conf):
 		perform_syncdb(conf)
-		subprocess.call(["python", "manage.py", "runserver", "0.0.0.0:8080", "--settings=settings.%s" % conf])
+		subprocess.call(["python", "manage.py", "runserver", "127.0.0.1:8080", "--settings=settings.%s" % conf])
 
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
