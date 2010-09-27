@@ -11,9 +11,11 @@ def install_nginx():
 
 def install_libevent():
 	""" http://www.monkey.org/~provos/libevent-1.4.14b-stable.tar.gz """
-	# ./configure
+	# ./configure --prefix=/usr
 	# make
 	# make install
+	# ldconfig
+	# TODO: on servers without root access I'll have to statically compile gevent
 	# run("apt-get install libevent-dev")
 
 def setup_git():
@@ -42,6 +44,10 @@ def bootstrap():
 	""" setup the whole site environment """
 	with cd("sites/sample"):
 		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
+
+def run_pip_freeze():
+	with cd("sites/sample/virtualenv/bin"):
+		run("./pip freeze")
 
 def run_wsgi():
 	with cd("sites/sample"):
