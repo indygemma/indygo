@@ -26,7 +26,10 @@ def enable_nginx_site(confname):
 	if filename:
 		fullpath = os.path.join(pwd, filename)
 		targetpath = "/etc/nginx/sites-enabled/%s" % PROJECT_NAME
-		os.remove(targetpath) # can't check the existance of symbolic links with os.path.exists. just assume it's there and delete
+		try:
+			os.remove(targetpath) # can't check the existance of symbolic links with os.path.exists. just assume it's there and delete
+		except:
+			pass
 		subprocess.call(["ln", "-s", fullpath, targetpath])
 
 if __name__ == '__main__':

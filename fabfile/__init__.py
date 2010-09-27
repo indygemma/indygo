@@ -3,7 +3,10 @@ from fabric.api import *
 env.hosts = ["root@65.49.73.73"]
 
 def host_type():
-	print local("uname -s")
+	run("uname -s")
+
+def install_nginx():
+	run("apt-get install nginx")
 
 def setup_git():
 	""" create an empty git repo on the server and push the local git repo to that """
@@ -28,8 +31,14 @@ def remove_site():
 	run("rm -rf sites/sample")
 
 def bootstrap():
-	"""docstring for bootstrap"""
+	""" setup the whole site environment """
 	pass
+
+def enable_nginx():
+	with cd("sites/sample"):
+		run("./etc/nginx/enable.py production")
 
 def push():
 	local("git push production")
+	with cd("sites/sample"):
+		run("git pull")
