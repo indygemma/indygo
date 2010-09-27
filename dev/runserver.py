@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!virtualenv/bin/python
 import os, sys, subprocess
 
 # set the parent directory as current

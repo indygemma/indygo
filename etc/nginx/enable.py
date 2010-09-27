@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!virtualenv/bin/python
 import os, sys, subprocess
 
 PROJECT_NAME = "$project"

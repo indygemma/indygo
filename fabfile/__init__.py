@@ -43,6 +43,10 @@ def bootstrap():
 	with cd("sites/sample"):
 		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
 
+def run_wsgi():
+	with cd("sites/sample"):
+		run("./dev/runwsgi.py production")
+
 def enable_nginx(): # requires install_nginx
 	with cd("sites/sample"):
 		run("./etc/nginx/enable.py production")

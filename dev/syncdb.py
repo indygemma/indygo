@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!virtualenv/bin/python
 import os, subprocess, sys
 
 pwd = os.path.join(os.path.dirname(__file__), "..")

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!virtualenv/bin/python
 import os, subprocess
 
 # assumption: under the project root there is a directory called tmp
