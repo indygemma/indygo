@@ -37,6 +37,7 @@ def bootstrap():
 def enable_nginx():
 	with cd("sites/sample"):
 		run("./etc/nginx/enable.py production")
+		run("/etc/init.d/nginx restart")
 
 def push():
 	local("git push production")
