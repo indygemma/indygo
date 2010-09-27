@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+
+PROJECT_NAME = "$project"
+
+pwd = os.path.abspath(os.path.dirname(__file__))
+
+def is_valid_confname(confname):
+	""" confname can be a full filename or just the name without a file ending """
+	for f in os.listdir(pwd):
+		try:
+			name, ending = f.split(".")
+		except:
+			name = f
+		if confname == name or confname == f:
+			return f
+	print "Invalid config file: %s" % confname
+	return False
+
+def enable_nginx_site(confname):
+	""" enables an nginx site by the name of confname.
+	Assumes the nginx conf files are in /etc/nginx/sites-enabled.
+	Maybe we should support a list of possible directories?
+	"""
+	filename = is_valid_confname(confname)
+	if filename:
+		fullpath = os.path.join(pwd, filename)
+		targetpath = "/etc/nginx/sites-enabled/%s" % PROJECT_NAME
+		os.remove(targetpath) # can't check the existance of symbolic links with os.path.exists. just assume it's there and delete
+		subprocess.call(["ln", "-s", fullpath, targetpath])
+
+if __name__ == '__main__':
+	if len(sys.argv) < 2:
+		print "Usage: enable.py <confname>"
+		sys.exit(1)
+	
+	confname = sys.argv[1]
+
+	enable_nginx_site(confname)
+

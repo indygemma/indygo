@@ -1,0 +1,6 @@
+virtualenv
+db/sqlite.db
+*.pyc
+*.swo
+*.swp
+tmp

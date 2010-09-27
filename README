@@ -1,0 +1,109 @@
+$project README
+===============
+
+Quick Start
+===========
+
+	$ ./bootstrap/bootstrap.py
+	$ ./dev/runserver.py development
+	
+	open http://localhost:8888 in your browser
+
+	To deploy:
+
+	-- adjust etc/nginx/production.conf (namely the port)
+	-- adjust settings/production.py (MEDIA_URL, DATABASE)
+	-- setup ssh key authentication on your deployment server
+	-- create a mysql/postgresql Database for your project on the deployment server (if required)
+
+	$ fab deploy/fab.py deploy
+
+File Structure:
+===============
+
+	/
+	+---/apps ----------------------- project-specific applications
+	+---/bootstrap ------------------ scripts and files to setup a dev environment
+        +---bootstrap.py ------------ main bootstrapping script
+        +---dependencies.txt -------- a list of python packages that this project depends on (pip)
+        +---setup_pip_virtualenv.sh-- 
+        +---setup_ubuntu_packages.sh-
+	+---/etc ------------------------ configuration files for various 3rd party services in production
+        +---/nginx ------------------- nginx specific configuration files
+            +---development.conf
+            +---production.conf
+			/supervisor -------------- supervisord-specific config files
+			+---supervisord.conf
+	+---/deploy --------------------- scripts and files for the deployment process
+        +---fab.py ------------------ Fabric configuration file
+	+---.gitignore
+        manage.py
+	+---README
+	+---/settings
+        +---__init__.py
+        +---common.py
+        +---development.py
+        +---production.py
+        +urls.py
+        
+
+Initial setup:
+==============
+
+	First setup the development environment and install all dependencies with
+
+		$ ./bootstrap/bootstrap.py
+
+	This assumes you already have virtualenv and pip installed on your system. If not, install those packages with:
+
+		$ ./bootstrap/setup_pip_virtualenv.py
+
+	After bootstrapping you should have all the dependencies listed in bootstrap/dependencies.txt properlly installed under virtualenv.
+
+Django's Development server:
+============================
+
+	Now you can launch django's development server as normal with the command:
+
+		$ python manage.py runserver 0.0.0.0
+
+	or alternatively
+
+		$ ./dev/runserver.py development
+
+	to launch the server with the pre-defined port (8888). This port is set in settings_development.py for the media-specific urls.
+
+gevent & nginx - based production server:
+=========================================
+
+	Under etc/nginx/nginx.conf you'll find an nginx configuration file customized for this project. Enable this site on nginx by running
+
+		$ sudo ./etc/nginx/enable.sh development
+
+	which simply runs
+
+		ln -s ${pwd()+os.path.join("etc", "nginx", "nginx_development.conf")} /etc/nginx/sites-enabled/$project
+
+	Run the gevent-based WSGI Handler
+
+		$ ./dev/runwsgi.py development
+
+	After an nginx restart you should see your site at http://localhost:8888 running on gevent/nginx. Change the nginx.conf file as needed.
+
+Deploying $project with Fabric:
+===============================
+
+	Under deploy/fab.py you'll find a preconfigured fab (Fabric) file for your project, which supports the following commands on the deployment server
+
+		setup         - to setup pip and virtualenv
+		bootstrap     - to bootstrap virtualenv and install dependencies
+		deploy
+	
+	You will have to do two things before you can deploy:
+
+		1) copy your ssh key to your deployment server
+		2) change your host settings in deploy/fab.py
+	
+		$ fab deploy/fab.py deploy
+
+Happy Hacking!
