@@ -42,6 +42,8 @@ def remove_site():
 
 def bootstrap():
 	""" setup the whole site environment """
+	setup_git()
+	setup_site()
 	with cd("sites/sample"):
 		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
 
@@ -52,6 +54,10 @@ def run_pip_freeze():
 def run_wsgi():
 	with cd("sites/sample"):
 		run("./dev/runwsgi.py production")
+
+def run_supervisor():
+	with cd("sites/sample"):
+		run("./dev/runsupervisor.py production")
 
 def enable_nginx(): # requires install_nginx
 	with cd("sites/sample"):
