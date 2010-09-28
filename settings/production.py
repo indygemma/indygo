@@ -3,7 +3,7 @@ import os
 
 LOCALHOST = "http://127.0.0.1:8080"
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
