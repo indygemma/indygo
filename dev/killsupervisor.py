@@ -13,6 +13,5 @@ try:
 	subprocess.call(["kill", pid])
 	print "killed supervisord with pid:", pid
 except:
-	raise
 	print "supervisord not running"
 
