@@ -62,6 +62,10 @@ def run_supervisor():
 	with cd("sites/sample"):
 		run("./dev/runsupervisor.py production")
 
+def kill_supervisor():
+	with cd("sites/sample"):
+		run("./dev/killsupervisor.py")
+
 def enable_nginx(): # requires install_nginx
 	with cd("sites/sample"):
 		run("./etc/nginx/enable.py production")
