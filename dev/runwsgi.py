@@ -36,7 +36,7 @@ if not settings in VALID_SETTINGS:
 	sys.exit(1)
 
 # set the process name to something meaningful
-setproctitle.setproctitle("$project")
+setproctitle.setproctitle("sample")
 
 # insert right django settings
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings.%s' % settings

@@ -55,6 +55,9 @@ def run_wsgi():
 	with cd("sites/sample"):
 		run("./dev/runwsgi.py production")
 
+def restart_server():
+	run("killall sample") # all wsgi servers run as this. set in dev/runwsgi.py via setproctitle
+
 def run_supervisor():
 	with cd("sites/sample"):
 		run("./dev/runsupervisor.py production")
@@ -68,3 +71,8 @@ def push():
 	local("git push production")
 	with cd("sites/sample"):
 		run("git pull")
+
+def deploy():
+	push()
+	restart_server()
+
