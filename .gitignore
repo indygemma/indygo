@@ -1,7 +1,7 @@
-virtualenv
-db/sqlite.db
+indygo/virtualenv
+indygo/db/sqlite.db
 *.pyc
 *.swo
 *.swp
-tmp
-compass/.sass-cache
+indygo/tmp
+indygo/compass/.sass-cache

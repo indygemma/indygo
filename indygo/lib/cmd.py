@@ -3,10 +3,14 @@ import os, subprocess
 PWD = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 def perform_syncdb(settings):
+	# TODO: what should we do when we want to do initial syncdb on a production db?
+	#       maybe add a script to load a set of fixtures with user account data there?
+	#       OR: automatically load any data files located under fixtures under subdirectories
+	#           named the same as the loaded settings file
 	subprocess.call(["python", "manage.py", "syncdb",
 											"--noinput",
 											"--settings=settings.%s" % settings])
-
+	
 def run_supervisord(conf, *options):
 	valid_options = {"--nodaemon": "-n"}
 	add_options   = []
