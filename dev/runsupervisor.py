@@ -10,6 +10,9 @@ from lib.cmd import valid_settings, run_supervisord
 if not os.path.exists(os.path.join(pwd, "tmp")):
 	os.mkdir(os.path.join(pwd, "tmp"))
 
+if os.path.exists(os.path.join(pwd, "tmp", "supervisord.pid")):
+	print "Not starting supervisord. Already running..."
+	sys.exit(1)
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
 		print "Usage: runsupervisor.py <configuration file>"

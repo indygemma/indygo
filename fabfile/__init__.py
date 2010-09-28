@@ -74,5 +74,6 @@ def push():
 
 def deploy():
 	push()
+	run_supervisor()
 	restart_server()
 
