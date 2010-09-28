@@ -4,3 +4,4 @@ db/sqlite.db
 *.swo
 *.swp
 tmp
+compass/.sass-cache

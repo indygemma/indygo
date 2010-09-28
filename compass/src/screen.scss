@@ -1,0 +1,356 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$blueprint_grid_columns: 24;
+/* $blueprint_grid_width: 130px; */
+$blueprint_grid_width: 35px;
+
+@import "blueprint";
+@import "compass/utilities/lists";
+
+@mixin mygrid() {
+    background: url("../img/grid.png");
+}
+
+@mixin hide() {
+    visibility: hidden;
+}
+
+@mixin bold() {
+    font-weight: bold;
+}
+
+@mixin block{
+	h2 {
+		@include bold;
+		color: $dark-header-color;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		font-size: 80%;
+		margin-top: 15px;
+		text-transform: uppercase;
+		color: $red-font-color;
+	}
+
+	span.date {
+		font-size: 73%;
+	}
+
+	p {
+		padding: 5px 0px 5px 0px;
+		line-height: 14px;
+
+		strong {
+			@include bold;
+		}
+	}
+
+	// TODO: temporary
+	div.pic {
+		/* @include mygrid; */
+		background: $pic-bg-color;
+		/* FIXME: temporary stuff */
+		height: 260px;
+		@include mygrid;
+	}
+
+	padding-bottom: 8px;
+	border-bottom: 3px solid #f0f6ea;
+	margin-bottom: 15px;
+
+	div.googlemap-map {
+		height: 300px;
+	}
+}
+
+@mixin film-block {
+	@include column(10);
+	ul.nav {
+		@include bold;
+		font-size: 60%;
+		color: $dark-header-color;
+		li.first {
+			color: $red-font-color;
+			border: none;
+		}
+	}
+	div.content {
+		@include column(7);
+		margin-top: 20px;
+		padding-bottom: 8px;
+		border-bottom: 3px solid #f0f6ea;
+	}
+	div.pic {
+		@include column(3, true);
+		margin-top: 20px;
+		background: $pic-bg-color;
+		min-height: 156px;
+		@include mygrid;
+	}
+
+	p {
+		font-size: 90%;
+		padding: 5px 0px 5px 0px;
+		line-height: 14px;
+	}
+}
+
+$bg-color: #e7eae1;
+$text-font-color: #90928d;
+
+// autumn design
+body { background: $bg-color url("../img/bgheader.jpg") repeat-x; } $text-font-color: #90928d;
+// light design
+body { background: url("../img/bgheader.jpg") repeat-x; } $text-font-color: #222; $bg-color: #fff;
+// winter design
+//body { background: #E1E9EC url("../img/bgheader.jpg") repeat-x; } $text-font-color: #B2BCC5;
+
+$nav-link-color:         #9dc0ac;
+$selected_link_color:    #528b94;
+$red-font-color:        #cb481e;
+$dark-header-color:     #3d3f3a;
+$pic-bg-color:          #f0f6ec;
+
+ul.nav {
+    @include horizontal-list;
+    color: $nav-link-color;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    letter-spacing: -0.5px;
+
+	// siblings should not be highlighted
+    a,
+	li.sibling a {
+        color: $nav-link-color;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $selected_link_color / 1.55;
+    }
+    li {
+        border-right: 1px solid;
+    }
+
+	// parents and the currently selected element are highlighted
+    li.selected a,
+	li.ancestor a {
+        color: $selected_link_color;
+    }
+    li.last {
+        border: none;
+    }	
+}
+
+// child navigation
+ul.subnav {
+	font-size: 75%;
+    padding-bottom: 0px;
+	li {
+		margin-bottom: 6px;
+	}
+}
+
+ul.noseparator {
+	li {
+		border: none;
+	}
+}
+
+.red { color: $red-font-color; }
+
+
+#container {
+    @include container;
+    /* opacity: 0.6;background: gray; */
+    #hd {
+        height: 120px;
+        /* set the font */
+        font-family: Arial;
+        letter-spacing: 1.5px;
+        font-size: 90%;
+        #logo {
+            padding-top: 30px;
+            @include column(3);
+        }
+        #mainnav {
+            padding-top: 30px;
+            @include column(7);
+            input.search {
+                border: none;
+                background: #e7eae1;
+            }
+        }
+        #catnav {
+            padding-top: 27px;
+            @include column(14, true);
+            ul.catnav {
+                font-size: 140%;
+            }
+        }
+    }
+
+    #bd {
+        font-size: 75%;
+        font-family: Arial;
+        color: $text-font-color;
+        
+        div.film-featured {
+            @include column(10);
+            h2 {
+                @include bold;
+                color: $red-font-color;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+            ul.nav {
+                color: $dark-header-color;
+                font-size: 68%;
+                letter-spacing: 0.15px;
+				@include bold;
+            }
+            div.content {
+                @include column(5);
+                padding-bottom: 8px;
+                border-bottom: 3px solid #f0f6ea;
+            }
+            div.pic {
+                /* @include mygrid; */
+                background: $pic-bg-color;
+                @include column(5, true);
+                /* FIXME: temporary stuff */
+                min-height: 280px;
+                @include mygrid;
+            }
+
+			div.pic200 {
+				@include column(5, true);
+				margin-top: 20px;
+				background: $pic-bg-color;
+				min-height: 155px;
+				@include mygrid;
+			}
+
+            p {
+                padding: 5px 0px 5px 0px;
+                line-height: 18px;
+            }
+
+			margin-bottom: 15px;
+        }
+
+		div.film-normal {
+			@include film-block;
+		}	
+
+        /* general block */
+		div.block {
+			@include block;
+		}
+
+		div.team-block-sidebar {
+			@include block;
+			// member blocks have colors inverted
+			h2 {
+			}
+
+			h3 {
+				// remove space below h2 header
+				margin-top: 15px;
+				@include bold;
+				font-size: 90%;
+			}
+
+			span.date {
+				font-size: 75%;
+				@include bold;
+				text-transform: uppercase;
+			}
+		}
+
+        /* add class="last" to let blueprint know that everything up to this element should be on a single row */
+        div.last {
+            @include last;
+        }
+
+        #content {
+            @include column(20);
+            // content specific block settings
+            div.block {
+                @include column(10);
+                ol {
+                    list-style-type: decimal;
+                    padding: 5px 0px 5px 20px;
+                    li {
+                        // add some space between the elements
+                        margin-bottom: 10px;
+                    }
+                }
+                h3 {
+                    // no red color here
+                    color: $dark-header-color;
+                    @include bold;
+                }
+                p {
+                    // paragraghs for blocks in #content have wider line-height
+                    line-height: 18px;
+                }
+            }
+
+            div.last {
+                @include column(10, true);
+            }
+
+			div.team-small {
+				@include column(5);
+				h2 {
+					color: $red-font-color;
+					text-transform: uppercase;
+					@include bold;
+				}
+
+				.nav {
+					margin-top: 3px;
+				}
+				
+				.nav li {
+					@include bold;
+					color: $dark-header-color;
+					font-size: 80%;
+				}
+			}
+
+			div.team-small.last {
+				@include column(5, true);
+			}
+        }
+        #sidebar {
+            @include column(4, true);
+            font-size: 90%;
+            form.newsletter {
+                @include bold;
+                margin-top: 10px;
+                text-transform: uppercase;
+                font-size: 80%;
+                input[type="text"] {
+                    background: $bg-color;
+                    border: none;
+                    border-bottom: 2px dotted #000;
+                    margin-bottom: 10px;
+                }
+                ul {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    #ft {
+        @include column(24, true);
+    }
+}

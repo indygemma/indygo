@@ -1,0 +1,3 @@
+#!/bin/sh
+compass watch compass &
+./dev/runserver.py development

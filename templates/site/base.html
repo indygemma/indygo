@@ -1,0 +1,64 @@
+{% load i18n cache %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>{% block "title" %}Your instantdjango site is complete{% endblock %}</title>
+		{% block meta %}
+		<meta name="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="content-language" content="en" />
+		<meta name="language" content="en" />
+		{% endblock %}
+
+		{% block styles %}	
+		<link href="{{ MEDIA_URL }}site/css/screen.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+		<link href="{{ MEDIA_URL }}site/css/print.css" rel="stylesheet" type="text/css" media="print" charset="utf-8">
+        <!--[if IE]-->
+		<link href="{{ MEDIA_URL }}site/css/ie.css" rel="stylesheet" type="text/css" media="screen, projection" charset="utf-8">
+        <!--[endif]-->
+		{% endblock %}
+
+		{% block javascript %}
+		<script src="{{ MEDIA_URL }}site/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		{% endblock %}
+
+		{% block extrahead %}{% endblock %}
+    </head>
+	<body>
+        <div id="container">
+            <div id="hd">
+                <div id="logo">
+					<a href="/"><h1>instantdjango</h1></a>
+				</div>
+                <div id="mainnav">
+                    <ul class="nav">
+					</ul>
+					<ul class="nav subnav">
+					</ul>
+                    <ul class="nav noseparator">
+                        <li class="selected"><a href="/">Search</a></li>
+                        <li><input type="text" name="search" class="search" value="" /></li>
+                    </ul>
+                </div>
+                <div id="catnav">
+                    <ul class="nav catnav">
+                        <li><a href="/">Feature Doc</a></li>
+                        <li><a href="/">TV Doc</a></li>
+                        <li class="last"><a href="/">Short Doc</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- news page -->
+            <div id="bd">
+				<div id="content">
+					{% block content %}
+					{% endblock %}
+				</div>
+				<div id="sidebar">
+				</div>
+            </div>  
+			<div id="ft">
+
+            </div>
+        </div>
+    </body>
+</html>

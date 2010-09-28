@@ -1,0 +1,594 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 14, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 17, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 19, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 21, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 25, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: "" "";
+}
+/* line 96, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 27, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* $blueprint_grid_width: 130px; */
+/* line 108, ../../../compass/src/screen.scss */
+body {
+  background: #e7eae1 url("../img/bgheader.jpg") repeat-x;
+}
+
+/* line 110, ../../../compass/src/screen.scss */
+body {
+  background: url("../img/bgheader.jpg") repeat-x;
+}
+
+/* line 120, ../../../compass/src/screen.scss */
+ul.nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  display: inline-block;
+  color: #9dc0ac;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+/* line 8, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+ul.nav {
+  display: block;
+}
+/* line 50, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+ul.nav li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 41, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+ul.nav li:first-child, ul.nav li.first {
+  padding-left: 0px;
+}
+/* line 43, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+ul.nav li:last-child, ul.nav li.last {
+  padding-right: 0px;
+}
+/* line 129, ../../../compass/src/screen.scss */
+ul.nav a,
+ul.nav li.sibling a {
+  color: #9dc0ac;
+  text-decoration: none;
+}
+/* line 133, ../../../compass/src/screen.scss */
+ul.nav a:hover {
+  color: #34595f;
+}
+/* line 136, ../../../compass/src/screen.scss */
+ul.nav li {
+  border-right: 1px solid;
+}
+/* line 142, ../../../compass/src/screen.scss */
+ul.nav li.selected a,
+ul.nav li.ancestor a {
+  color: #528b94;
+}
+/* line 145, ../../../compass/src/screen.scss */
+ul.nav li.last {
+  border: none;
+}
+
+/* line 151, ../../../compass/src/screen.scss */
+ul.subnav {
+  font-size: 75%;
+  padding-bottom: 0px;
+}
+/* line 154, ../../../compass/src/screen.scss */
+ul.subnav li {
+  margin-bottom: 6px;
+}
+
+/* line 160, ../../../compass/src/screen.scss */
+ul.noseparator li {
+  border: none;
+}
+
+/* line 165, ../../../compass/src/screen.scss */
+.red {
+  color: #cb481e;
+}
+
+/* line 168, ../../../compass/src/screen.scss */
+#container {
+  width: 1070px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: inline-block;
+  /* opacity: 0.6;background: gray; */
+}
+/* line 8, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#container {
+  display: block;
+}
+/* line 171, ../../../compass/src/screen.scss */
+#container #hd {
+  height: 120px;
+  /* set the font */
+  font-family: Arial;
+  letter-spacing: 1.5px;
+  font-size: 90%;
+}
+/* line 177, ../../../compass/src/screen.scss */
+#container #hd #logo {
+  padding-top: 30px;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 125px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #hd #logo {
+  overflow-x: hidden;
+}
+/* line 181, ../../../compass/src/screen.scss */
+#container #hd #mainnav {
+  padding-top: 30px;
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 305px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #hd #mainnav {
+  overflow-x: hidden;
+}
+/* line 184, ../../../compass/src/screen.scss */
+#container #hd #mainnav input.search {
+  border: none;
+  background: #e7eae1;
+}
+/* line 189, ../../../compass/src/screen.scss */
+#container #hd #catnav {
+  padding-top: 27px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 620px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #hd #catnav {
+  overflow-x: hidden;
+}
+/* line 192, ../../../compass/src/screen.scss */
+#container #hd #catnav ul.catnav {
+  font-size: 140%;
+}
+/* line 198, ../../../compass/src/screen.scss */
+#container #bd {
+  font-size: 75%;
+  font-family: Arial;
+  color: #222222;
+  /* general block */
+  /* add class="last" to let blueprint know that everything up to this element should be on a single row */
+}
+/* line 203, ../../../compass/src/screen.scss */
+#container #bd div.film-featured {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 440px;
+  margin-bottom: 15px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-featured {
+  overflow-x: hidden;
+}
+/* line 205, ../../../compass/src/screen.scss */
+#container #bd div.film-featured h2 {
+  font-weight: bold;
+  color: #cb481e;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+/* line 211, ../../../compass/src/screen.scss */
+#container #bd div.film-featured ul.nav {
+  color: #3d3f3a;
+  font-size: 68%;
+  letter-spacing: 0.15px;
+  font-weight: bold;
+}
+/* line 217, ../../../compass/src/screen.scss */
+#container #bd div.film-featured div.content {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 215px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #f0f6ea;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-featured div.content {
+  overflow-x: hidden;
+}
+/* line 222, ../../../compass/src/screen.scss */
+#container #bd div.film-featured div.pic {
+  /* @include mygrid; */
+  background: #f0f6ec;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 215px;
+  /* FIXME: temporary stuff */
+  min-height: 280px;
+  background: url("../img/grid.png");
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-featured div.pic {
+  overflow-x: hidden;
+}
+/* line 231, ../../../compass/src/screen.scss */
+#container #bd div.film-featured div.pic200 {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 215px;
+  margin-top: 20px;
+  background: #f0f6ec;
+  min-height: 155px;
+  background: url("../img/grid.png");
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-featured div.pic200 {
+  overflow-x: hidden;
+}
+/* line 239, ../../../compass/src/screen.scss */
+#container #bd div.film-featured p {
+  padding: 5px 0px 5px 0px;
+  line-height: 18px;
+}
+/* line 247, ../../../compass/src/screen.scss */
+#container #bd div.film-normal {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 440px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-normal {
+  overflow-x: hidden;
+}
+/* line 74, ../../../compass/src/screen.scss */
+#container #bd div.film-normal ul.nav {
+  font-weight: bold;
+  font-size: 60%;
+  color: #3d3f3a;
+}
+/* line 78, ../../../compass/src/screen.scss */
+#container #bd div.film-normal ul.nav li.first {
+  color: #cb481e;
+  border: none;
+}
+/* line 83, ../../../compass/src/screen.scss */
+#container #bd div.film-normal div.content {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 305px;
+  margin-top: 20px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #f0f6ea;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-normal div.content {
+  overflow-x: hidden;
+}
+/* line 89, ../../../compass/src/screen.scss */
+#container #bd div.film-normal div.pic {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 125px;
+  margin-top: 20px;
+  background: #f0f6ec;
+  min-height: 156px;
+  background: url("../img/grid.png");
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd div.film-normal div.pic {
+  overflow-x: hidden;
+}
+/* line 97, ../../../compass/src/screen.scss */
+#container #bd div.film-normal p {
+  font-size: 90%;
+  padding: 5px 0px 5px 0px;
+  line-height: 14px;
+}
+/* line 252, ../../../compass/src/screen.scss */
+#container #bd div.block {
+  padding-bottom: 8px;
+  border-bottom: 3px solid #f0f6ea;
+  margin-bottom: 15px;
+}
+/* line 28, ../../../compass/src/screen.scss */
+#container #bd div.block h2 {
+  font-weight: bold;
+  color: #3d3f3a;
+  text-transform: uppercase;
+}
+/* line 34, ../../../compass/src/screen.scss */
+#container #bd div.block h3 {
+  font-size: 80%;
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: #cb481e;
+}
+/* line 41, ../../../compass/src/screen.scss */
+#container #bd div.block span.date {
+  font-size: 73%;
+}
+/* line 45, ../../../compass/src/screen.scss */
+#container #bd div.block p {
+  padding: 5px 0px 5px 0px;
+  line-height: 14px;
+}
+/* line 49, ../../../compass/src/screen.scss */
+#container #bd div.block p strong {
+  font-weight: bold;
+}
+/* line 55, ../../../compass/src/screen.scss */
+#container #bd div.block div.pic {
+  /* @include mygrid; */
+  background: #f0f6ec;
+  /* FIXME: temporary stuff */
+  height: 260px;
+  background: url("../img/grid.png");
+}
+/* line 67, ../../../compass/src/screen.scss */
+#container #bd div.block div.googlemap-map {
+  height: 300px;
+}
+/* line 256, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar {
+  padding-bottom: 8px;
+  border-bottom: 3px solid #f0f6ea;
+  margin-bottom: 15px;
+}
+/* line 28, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar h2 {
+  font-weight: bold;
+  color: #3d3f3a;
+  text-transform: uppercase;
+}
+/* line 34, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar h3 {
+  font-size: 80%;
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: #cb481e;
+}
+/* line 41, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar span.date {
+  font-size: 73%;
+}
+/* line 45, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar p {
+  padding: 5px 0px 5px 0px;
+  line-height: 14px;
+}
+/* line 49, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar p strong {
+  font-weight: bold;
+}
+/* line 55, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar div.pic {
+  /* @include mygrid; */
+  background: #f0f6ec;
+  /* FIXME: temporary stuff */
+  height: 260px;
+  background: url("../img/grid.png");
+}
+/* line 67, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar div.googlemap-map {
+  height: 300px;
+}
+/* line 262, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar h3 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 90%;
+}
+/* line 269, ../../../compass/src/screen.scss */
+#container #bd div.team-block-sidebar span.date {
+  font-size: 75%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 277, ../../../compass/src/screen.scss */
+#container #bd div.last {
+  margin-right: 0;
+}
+/* line 281, ../../../compass/src/screen.scss */
+#container #bd #content {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 890px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #content {
+  overflow-x: hidden;
+}
+/* line 284, ../../../compass/src/screen.scss */
+#container #bd #content div.block {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 440px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #content div.block {
+  overflow-x: hidden;
+}
+/* line 286, ../../../compass/src/screen.scss */
+#container #bd #content div.block ol {
+  list-style-type: decimal;
+  padding: 5px 0px 5px 20px;
+}
+/* line 289, ../../../compass/src/screen.scss */
+#container #bd #content div.block ol li {
+  margin-bottom: 10px;
+}
+/* line 294, ../../../compass/src/screen.scss */
+#container #bd #content div.block h3 {
+  color: #3d3f3a;
+  font-weight: bold;
+}
+/* line 299, ../../../compass/src/screen.scss */
+#container #bd #content div.block p {
+  line-height: 18px;
+}
+/* line 305, ../../../compass/src/screen.scss */
+#container #bd #content div.last {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 440px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #content div.last {
+  overflow-x: hidden;
+}
+/* line 309, ../../../compass/src/screen.scss */
+#container #bd #content div.team-small {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 215px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #content div.team-small {
+  overflow-x: hidden;
+}
+/* line 311, ../../../compass/src/screen.scss */
+#container #bd #content div.team-small h2 {
+  color: #cb481e;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 317, ../../../compass/src/screen.scss */
+#container #bd #content div.team-small .nav {
+  margin-top: 3px;
+}
+/* line 321, ../../../compass/src/screen.scss */
+#container #bd #content div.team-small .nav li {
+  font-weight: bold;
+  color: #3d3f3a;
+  font-size: 80%;
+}
+/* line 328, ../../../compass/src/screen.scss */
+#container #bd #content div.team-small.last {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 215px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #content div.team-small.last {
+  overflow-x: hidden;
+}
+/* line 332, ../../../compass/src/screen.scss */
+#container #bd #sidebar {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 170px;
+  font-size: 90%;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #bd #sidebar {
+  overflow-x: hidden;
+}
+/* line 335, ../../../compass/src/screen.scss */
+#container #bd #sidebar form.newsletter {
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 80%;
+}
+/* line 340, ../../../compass/src/screen.scss */
+#container #bd #sidebar form.newsletter input[type="text"] {
+  background: white;
+  border: none;
+  border-bottom: 2px dotted #000;
+  margin-bottom: 10px;
+}
+/* line 346, ../../../compass/src/screen.scss */
+#container #bd #sidebar form.newsletter ul {
+  padding: 10px;
+}
+/* line 353, ../../../compass/src/screen.scss */
+#container #ft {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 1070px;
+}
+/* line 138, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.10.2/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #container #ft {
+  overflow-x: hidden;
+}
