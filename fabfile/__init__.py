@@ -56,7 +56,7 @@ def run_wsgi():
 		run("./dev/runwsgi.py production")
 
 def restart_server():
-	run("killall sample") # all wsgi servers run as this. set in dev/runwsgi.py via setproctitle
+	run("pkill sample") # all wsgi servers run as this. set in dev/runwsgi.py via setproctitle
 
 def run_supervisor():
 	with cd("sites/sample"):
