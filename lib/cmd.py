@@ -1,6 +1,6 @@
 import os, subprocess
 
-PWD = os.path.join(os.path.dirname(__file__), "..")
+PWD = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 def perform_syncdb(settings):
 	subprocess.call(["python", "manage.py", "syncdb",
@@ -26,11 +26,12 @@ def run_supervisord(conf, *options):
 	found_conf = valid_conf(conf)
 	if found_conf:
 		confpath = os.path.join(confdir, found_conf)
-		print confpath
+		virtualenvbin = os.path.join(PWD, "virtualenv", "bin")
+		supervisorpath = os.path.join(virtualenvbin, "supervisord")
 		if add_options:
-			subprocess.call(["supervisord", " ".join(add_options), "-c", confpath])
+			subprocess.call([supervisorpath, " ".join(add_options), "-c", confpath])
 		else:
-			subprocess.call(["supervisord", "-c", confpath])
+			subprocess.call([supervisorpath, "-c", confpath])
 	
 def valid_settings():
 	all_valid = []
