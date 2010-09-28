@@ -16,6 +16,7 @@ os.chdir(pwd)
 sys.path.insert(0, os.getcwd())
 
 from lib.cmd import valid_settings, perform_syncdb
+from lib.async import changemonitor
 
 VALID_SETTINGS = valid_settings()
 
@@ -53,6 +54,19 @@ got_request_exception.connect(exception_printer)
 print 'gevent wsgi server is running on 8080 with settings: %s' % settings
 server = WSGIServer(('127.0.0.1', 8080), WSGIHandler())
 server.start()
+
+# NOTE: start a change monitor if we're in development mode.
+# this will kill the running process when any python source files
+# in this project are modified. If we have a supervisor running
+# he will automatically launch a new instance of this server
+# causing the new server to pick up the change. With this we can
+# use the gevent-based server for development. Having the same
+# server for development and production reduces chances for any
+# infrastructure-related bugs.
+if "development" == settings:
+	import subprocess
+	print "change monitor is running..."
+	gevent.spawn(changemonitor, lambda: subprocess.call(["pkill", "sample"]))
 
 while True:
 	gevent.sleep(0.0001)
