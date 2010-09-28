@@ -3,7 +3,7 @@ import os
 
 USER = "root"
 env.hosts = ["%s@65.49.73.73" % USER]
-PROJECT_NAME = "sample"
+PROJECT_NAME = "${project}"
 REPO_DIR  = os.path.join("/home", USER, "repos")
 REPO_PATH = os.path.join(REPO_DIR, "%s.git" % PROJECT_NAME)
 SITE_DIR  = os.path.join("/home", USER, "sites")

@@ -10,6 +10,8 @@ from django.core.signals import got_request_exception
 import gevent
 import setproctitle
 
+PROJECT_NAME = "${project}"
+
 # add the project root to the sys.path so we can find settings
 pwd = os.path.join(os.path.dirname(__file__), "..")
 os.chdir(pwd)
@@ -37,7 +39,7 @@ if not settings in VALID_SETTINGS:
 	sys.exit(1)
 
 # set the process name to something meaningful
-setproctitle.setproctitle("sample")
+setproctitle.setproctitle(PROJECT_NAME)
 
 # insert right django settings
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings.%s' % settings
@@ -66,7 +68,7 @@ server.start()
 if "development" == settings:
 	import subprocess
 	print "change monitor is running..."
-	gevent.spawn(changemonitor, lambda: subprocess.call(["pkill", "sample"]))
+	gevent.spawn(changemonitor, lambda: subprocess.call(["pkill", PROJECT_NAME]))
 
 while True:
 	gevent.sleep(0.0001)

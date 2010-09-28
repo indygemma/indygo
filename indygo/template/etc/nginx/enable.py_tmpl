@@ -1,7 +1,7 @@
 #!virtualenv/bin/python
 import os, sys, subprocess
 
-PROJECT_NAME = "$project"
+PROJECT_NAME = "${project}"
 
 pwd = os.path.abspath(os.path.dirname(__file__))
 

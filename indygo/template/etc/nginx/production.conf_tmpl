@@ -1,0 +1,29 @@
+# check http://gunicorn.org/deploy.html for more complete configuration
+server {
+	listen 9000;
+	access_log  /var/log/nginx/${project}.access.log;
+	error_log   /var/log/nginx/${project}.error.log;
+	client_max_body_size 4G;
+	server_name ${project};
+
+	keepalive_timeout 5;
+
+	root ${__import__('os').path.abspath(__import__('os').getcwd())}/${project}/media;
+
+	location / {
+		proxy_set_header X-Forwarded-For $$proxy_add_x_forwarded_for;
+		proxy_set_header Host $$http_host;
+		proxy_redirect off;
+
+		if (!-f $$request_filename) {
+			proxy_pass http://127.0.0.1:8080;
+			break;
+		}
+	}
+
+	error_page 500 502 503 504 /500.html;
+	location = /500.html {
+		root ${__import__('os').path.abspath(__import__('os').getcwd())}/${project}/media;
+	}
+}
+

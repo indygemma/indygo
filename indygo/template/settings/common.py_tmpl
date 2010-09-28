@@ -1,4 +1,4 @@
-# Django settings for $project project.
+# Django settings for ${project} project.
 import os, sys
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -50,7 +50,7 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = MEDIA_URL + '/admin/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '9zw+hge9260xy&^l5)1s7q-^63g%a!5er!wp-+x+thwg90)e$5'
+SECRET_KEY = "lol"
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

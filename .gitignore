@@ -1,7 +1,8 @@
-indygo/virtualenv
-indygo/db/sqlite.db
+build
+indygo.egg-info
+dist
 *.pyc
 *.swo
 *.swp
-indygo/tmp
-indygo/compass/.sass-cache
+indygo/template/tmp
+indygo/template/compass/.sass-cache

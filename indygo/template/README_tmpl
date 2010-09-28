@@ -1,4 +1,4 @@
-$project README
+${project} README
 ===============
 
 Quick Start
@@ -82,7 +82,7 @@ gevent & nginx - based production server:
 
 	which simply runs
 
-		ln -s ${pwd()+os.path.join("etc", "nginx", "nginx_development.conf")} /etc/nginx/sites-enabled/$project
+		ln -s ${pwd()+os.path.join("etc", "nginx", "nginx_development.conf")} /etc/nginx/sites-enabled/${project}
 
 	Run the gevent-based WSGI Handler
 
@@ -90,7 +90,7 @@ gevent & nginx - based production server:
 
 	After an nginx restart you should see your site at http://localhost:8888 running on gevent/nginx. Change the nginx.conf file as needed.
 
-Deploying $project with Fabric:
+Deploying ${project} with Fabric:
 ===============================
 
 	Under deploy/fab.py you'll find a preconfigured fab (Fabric) file for your project, which supports the following commands on the deployment server
