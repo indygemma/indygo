@@ -4,7 +4,7 @@ setup(
 		name="indygo",
 		version="1.0",
 		author="Conrad Indiono",
-		description="A complete Django environment ready for deployment",
+		description="A pastescript template for a complete django project with pip+virtualenv, fabric, a gevent-based wsgi server and various helpers scripts. Ready to deploy on your production server in minutes.",
 		packages=find_packages(),
 		install_requires=["PasteScript"],
 		zip_safe=False,
