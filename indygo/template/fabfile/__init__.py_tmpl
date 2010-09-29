@@ -60,12 +60,16 @@ def clean():
 	remove_repo()
 	remove_site()
 
+def run_bootstrap_only():
+	""" runs the bootstrap script within the project directory """
+	with cd(SITE_PATH):
+		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
+
 def bootstrap():
 	""" setup the whole site environment """
 	setup_repo()
 	setup_site()
-	with cd(SITE_PATH):
-		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
+	run_bootstrap_only()
 	enable_nginx()
 
 def run_pip_freeze():
