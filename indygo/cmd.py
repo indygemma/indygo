@@ -12,6 +12,7 @@ def set_permissions(project_dir):
 		("dev", "runsupervisor.py"),
 		("dev", "runwsgi.py"),
 		("dev", "syncdb.py"),
+		("dev", "work"),
 		("etc", "nginx", "enable.py"),
 		("manage.py",),
 	]

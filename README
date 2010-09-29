@@ -34,7 +34,7 @@ File Structure:
 	|   +---runsupervisor.py -------- run a supervisord daemon which automatically starts wsgi servers (runwsgi.py)
 	|   +---runwsgi.py -------------- run a gevent-based wsgi server customized for django
 	|   +---syncdb.py --------------- wrapper to manage.py syncdb. with "--noinput" and loading of fixtures
-	|   +---work.py ----------------- helper script to run compass in the background and supervisord in development mode
+	|   +---work -------------------- helper script to run compass in the background and supervisord in development mode
 	+---/etc ------------------------- configuration files for various 3rd party services in production
 	|   +---/nginx ------------------- nginx specific configuration files
 	|   |   +---development.conf ----- root folder points to this project folder by default
