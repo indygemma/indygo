@@ -5,7 +5,7 @@ def set_permissions(project_dir):
 	""" set permissions to 755 for selected scripts """
 	files_to_change = [
 		("bootstrap", "bootstrap.py"),
-		("bootstrap", "setup_pip_virtualenv.py"),
+		("bootstrap", "setup_pip_virtualenv.sh"),
 		("bootstrap", "setup_ubuntu_packages.sh"),
 		("dev", "killsupervisor.py"),
 		("dev", "runserver.py"),
