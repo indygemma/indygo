@@ -31,11 +31,18 @@ def rename_dotfiles(project_dir):
 	)
 
 def create_empty_directories(project_dir):
-	[os.makedirs(os.path.join(project_dir, *d)) for d in [
+	directories = [
+		["db"],
 		["fixtures"],
 		["fixtures", "development"],
 		["fixtures", "production"]
-	]]
+	]
+	for d in directories:
+		try:
+			os.makedirs(os.path.join(project_dir, *d))
+			print "creating directory:", os.path.join(*d)
+		except:
+			pass
 
 def call_paster():
 	if len(sys.argv) < 2:
