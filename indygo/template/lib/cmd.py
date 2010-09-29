@@ -38,13 +38,14 @@ def run_supervisord(conf, *options):
 			subprocess.call([supervisorpath, "-c", confpath])
 	
 def valid_settings():
+	""" valid settings are python files which not start with _"""
 	all_valid = []
 	for f in os.listdir(os.path.join(PWD, "settings")):
 		try:
 			name, ending = f.split(".")
 		except:
 			name = f
-		if name != "__init__" and ending != "pyc" and not name.startswith(".") and name != "common":
+		if name != "__init__" and ending != "pyc" and not name.startswith(".") and name != "common" and not name.startswith("_"):
 			all_valid.append(name)
 	return all_valid
 
