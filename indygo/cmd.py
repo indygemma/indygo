@@ -30,6 +30,13 @@ def rename_dotfiles(project_dir):
 			os.path.join(project_dir, ".gitignore")
 	)
 
+def create_empty_directories(project_dir):
+	[os.makedirs(os.path.join(project_dir, *d)) for d in [
+		["fixtures"],
+		["fixtures", "development"],
+		["fixtures", "production"]
+	]]
+
 def call_paster():
 	if len(sys.argv) < 2:
 		print "Usage: indygo <projectname>"
@@ -40,4 +47,5 @@ def call_paster():
 	subprocess.call(["paster", "create", "--template=indygo", name])
 	set_permissions(project_dir)
 	rename_dotfiles(project_dir)
+	create_empty_directories(project_dir)
 

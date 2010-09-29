@@ -118,8 +118,7 @@ Quick Deployment
 	$ fab bootstrap
 	$ fab deploy
 
-fab bootstrap will create a bare git repo, add this repo to your local git, create the site structure, call bootstrap/bootstrap.py remotely, and enable
-nginx pointing to this project.
+fab bootstrap will create a bare git repo, add this repo to your local git, create the site structure, call bootstrap/bootstrap.py remotely, and enable nginx pointing to this project.
 
 fab deploy pushes your local git state to the remote repo, run supervisord if it's not already running and restart all associated wsgi servers
 
