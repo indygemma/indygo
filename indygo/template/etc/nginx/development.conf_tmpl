@@ -1,6 +1,6 @@
 # check http://gunicorn.org/deploy.html for more complete configuration
 server {
-	listen 80;
+	listen 9000;
 	access_log  /var/log/nginx/${project}.access.log;
 	error_log   /var/log/nginx/${project}.error.log;
 	client_max_body_size 4G;

@@ -1,0 +1,6 @@
+tmp
+virtualenv
+compass/.sass-cache
+*.pyc
+*.swo
+*.swp

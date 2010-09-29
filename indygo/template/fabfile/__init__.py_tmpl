@@ -1,13 +1,21 @@
 from fabric.api import *
 import os
 
+### <CHANGEME>
 USER = "root"
-env.hosts = ["%s@65.49.73.73" % USER]
-PROJECT_NAME = "${project}"
+HOST = ""
 REPO_DIR  = os.path.join("/home", USER, "repos")
-REPO_PATH = os.path.join(REPO_DIR, "%s.git" % PROJECT_NAME)
 SITE_DIR  = os.path.join("/home", USER, "sites")
+### </CHANGEME>
+
+env.hosts = ["%s@HOST" % USER]
+PROJECT_NAME = "${project}"
+REPO_PATH = os.path.join(REPO_DIR, "%s.git" % PROJECT_NAME)
 SITE_PATH = os.path.join(SITE_DIR, PROJECT_NAME)
+
+if not HOST:
+	import os
+	raise Exception("HOST not set in %s" % os.path.join(os.path.dirname(__file__), __file__))
 
 def host_type():
 	run("uname -s")
@@ -58,6 +66,7 @@ def bootstrap():
 	setup_site()
 	with cd(SITE_PATH):
 		run("./bootstrap/bootstrap.py") # requires install_libevent for gevent
+	enable_nginx()
 
 def run_pip_freeze():
 	with cd(os.path.join(SITE_PATH, "virtualenv", "bin")):
@@ -67,7 +76,7 @@ def run_wsgi():
 	with cd(SITE_PATH):
 		run("./dev/runwsgi.py production")
 
-def restart_server():
+def kill_wsgi():
 	with settings(warn_only=True):
 		result = run("pkill %s" % PROJECT_NAME) # all wsgi servers run as this. set in dev/runwsgi.py via setproctitle
 	if result.failed:
@@ -96,5 +105,5 @@ def push():
 def deploy():
 	push()
 	run_supervisor()
-	restart_server()
+	kill_wsgi()
 

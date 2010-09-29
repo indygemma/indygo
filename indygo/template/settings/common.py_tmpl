@@ -50,7 +50,7 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = MEDIA_URL + '/admin/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "lol"
+SECRET_KEY = "${"".join(__import__('random').choice('abcdefghijklmnopqrstuvwxyz1234567890!@#%^&*(-_=+)') for i in range(50))}"
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

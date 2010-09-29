@@ -8,15 +8,22 @@ setup(
 		packages=find_packages(),
 		install_requires=["PasteScript"],
 		zip_safe=False,
-		package_data={'':['*.*']},
+		package_data={
+			'indygo.template':[
+				"compass/src/*",
+				"media/site/css/*",
+				"media/site/img/*",
+				"media/site/js/*",
+				"templates/site/*",
+				"fixtures/development/*",
+				"fixtures/production/*",
+			]
+		},
 		include_package_data=True,
 		entry_points = {
 			'paste.paster_create_template':
 				['indygo = indygo:IndyGoTemplate'],
 			'console_scripts':
-				#['rst2pdf = project_a.tools.pdfgen [PDF]',
-				#'rst2html = project_a.tools.htmlgen'],
-				[]
+				['indygo = indygo.cmd:call_paster']
 		},
-		eager_resources = ["indygo/template/media/site/css/ie.css"]
 )
