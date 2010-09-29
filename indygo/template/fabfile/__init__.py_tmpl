@@ -8,7 +8,7 @@ REPO_DIR  = os.path.join("/home", USER, "repos")
 SITE_DIR  = os.path.join("/home", USER, "sites")
 ### </CHANGEME>
 
-env.hosts = ["%s@HOST" % USER]
+env.hosts = ["%s@%s" % (USER,HOST)]
 PROJECT_NAME = "${project}"
 REPO_PATH = os.path.join(REPO_DIR, "%s.git" % PROJECT_NAME)
 SITE_PATH = os.path.join(SITE_DIR, PROJECT_NAME)
